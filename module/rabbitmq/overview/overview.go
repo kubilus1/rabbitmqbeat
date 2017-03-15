@@ -2,7 +2,7 @@ package overview
 
 import (
 	"fmt"
-	"github.com/bernielomax/rabbitmqbeat/module/rabbitmq"
+	"github.com/kubilus1/rabbitmqbeat/module/rabbitmq"
 	"github.com/elastic/beats/libbeat/common"
 	"github.com/elastic/beats/metricbeat/mb"
 	"github.com/pkg/errors"
