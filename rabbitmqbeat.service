@@ -1,0 +1,10 @@
+[Unit]
+Description=RabbitMQBeat Service
+
+[Service]
+Type=simple
+ExecStart=/usr/share/rabbitmqbeat/bin/rabbitmqbeat -c /etc/rabbitmqbeat/rabbitmqbeat.yml -path.home /usr/share/rabbitmqbeat -path.config /etc/rabbitmqbeat -path.data /var/lib/rabbitmqbeat -path.logs /var/log/rabbitmqbeat
+
+
+[Install]
+WantedBy=multi-user.target
