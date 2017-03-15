@@ -1,0 +1,7 @@
+Package: rabbitmqbeat
+Architecture: all
+Maintainer: Matt Kubilus
+Depends:
+Priority: optional
+Version: 0
+Description: RabbitMQ Beat Service

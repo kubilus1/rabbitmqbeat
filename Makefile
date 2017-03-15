@@ -29,3 +29,17 @@ update-deps:
 # This is called by the beats packer before building starts
 .PHONY: before-build
 before-build:
+
+deb_pkg: rabbitmqbeat
+	mkdir -p package/usr/share/rabbitmqbeat/bin
+	mkdir -p package/etc/rabbitmqbeat
+	mkdir -p package/var/lib/rabbitmqbeat
+	mkdir -p package/var/log/rabbitmqbeat
+	mkdir -p package/etc/systemd/system
+	cp rabbitmqbeat package/usr/share/rabbitmqbeat/bin/.
+	cp rabbitmqbeat.yml package/etc/rabbitmqbeat/.
+	cp rabbitmqbeat.template.json package/etc/rabbitmqbeat/.
+	cp rabbitmqbeat.service package/etc/systemd/system/.
+	cp -r DEBIAN package/.
+	sudo dpkg-deb --build package
+	mv package.deb rabbitmqbeat.deb
